@@ -3,7 +3,7 @@ from random import randint
 name_level = 1
 name_hp = name_level + 10
 name_foce = randint(1, 5) * name_level
-name_money = 0
+name_money = 10
 
 enemy_level = 1
 enemy_hp = enemy_level + 15
@@ -61,7 +61,33 @@ def left():
     elif choise == '2':
         print('гопники:')
         print('нуу, так тоже можно')
-        print('ИГРА НАЧАЛАСЬ!')
+        if name_money >= 1:
+            print('ИГРА НАЧАЛАСЬ!')
+            print('__________________________________')
+            print('y', name, name_money, 'денег')
+            bet = int(input('сколько ставишь? '))
+            if bet > name_money:
+                print('да нет у тебя столько денег')
+            elif bet < 1:
+                print('ставь нормальную ставку')
+            else:
+                print('ставка игрока', bet)
+                name_bet = randint(1, 6)
+                enemy_bet = randint(1, 6)
+                if name_bet > enemy_bet:
+                    name_money =+ bet * 2
+                    print('число', name, name_bet, 'число', enemy_name, enemy_bet)
+                    print(name, 'выиграл', bet * 2, 'долларов')
+                elif name_bet == enemy_bet:
+                    print('ничья')
+                else:
+                     print('число', name, name_bet, 'число', enemy_name, enemy_bet)
+                     print(name, 'проиграл', bet , 'долларов')
+        else:
+            print('так стоп, у тебя нет денег клоун')
+        
+                            
+
 
         
 
