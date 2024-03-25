@@ -1,0 +1,9 @@
+def to_swap(text):
+	text = text.split()
+	text[0], text[-1] = text[-1], text[0]
+	return text
+	
+	
+text = input(' ')	
+gye = to_swap(text)
+print(gye)
