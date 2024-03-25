@@ -1,0 +1,13 @@
+def palindrome(text):
+	text = text.lower()
+	text_1 = text[::]
+	text_2 = text[::-1]
+	if text_1 == text_2:
+		return True
+	else:
+		return False
+		
+
+text = input(' ')
+gey = palindrome(text)
+print(gey)
